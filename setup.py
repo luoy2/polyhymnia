@@ -20,7 +20,7 @@ setup(
     description='Polyhymnia: Natual Chinese Data Augmentation',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='git@github.com:luoy2/polyhymnia.git',
+    url='https://github.com/luoy2/polyhymnia.git',
     author='yikang',
     author_email='luoy2@hotmail.com',
     license='Apache License 2.0',
