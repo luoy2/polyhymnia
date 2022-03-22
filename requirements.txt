@@ -1,0 +1,8 @@
+bert4keras>=0.10.6
+synonyms>=3.10.2
+scipy>=1.7.1
+retry>=0.9.2
+jieba>=0.42.0
+zhon>=1.1.5
+requests>=2.24.0
+tensorflow>=2.1.0
