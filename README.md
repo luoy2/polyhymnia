@@ -26,26 +26,6 @@ pip install .
 测试安装：
 ```bash
 ~/polyhymnia$ python38 -m unittest tests/test_methods.py -v
-test_aeda (tests.test_methods.TestMethods) ... [jieba] default dict file path ../data/vocab.txt
-[jieba] default dict file path ../data/vocab.txt
-[jieba] load default dict ../data/vocab.txt ...
-/opt/python38/lib/python3.8/site-packages/pkg_resources/__init__.py:1151: DeprecationWarning: Use of  in a future release.
-  return get_provider(package_or_requirement).get_resource_stream(
-[jieba] load default dict ../data/vocab.txt ...
->> Synonyms load wordseg dict [/data/wanting/.local/lib/python3.8/site-packages/synonyms/data/vocab.t
->> Synonyms on loading stopwords [/data/wanting/.local/lib/python3.8/site-packages/synonyms/data/stop
-/data/wanting/.local/lib/python3.8/site-packages/synonyms/synonyms.py:104: ResourceWarning: unclosed synonyms/data/stopwords.txt' mode='r' encoding='utf-8'>
-  _load_stopwords(_fin_stopwords_path)
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-[Synonyms] on loading vectors [/data/comm/pkgs/polyhymnia/polyhymnia/data/words.vector] ...
-/data/wanting/.local/lib/python3.8/site-packages/smart_open/smart_open_lib.py:479: DeprecationWarningopen/blob/develop/MIGRATING_FROM_OLDER_VERSIONS.rst for more information
-  warnings.warn(message, category=DeprecationWarning)
-/data/wanting/.local/lib/python3.8/site-packages/synonyms/word2vec.py:175: DeprecationWarning: The biputs. Use frombuffer instead
-  weights = fromstring(fin.read(binary_len), dtype=REAL)
-['身份证丢了怎 。么办', '身份证丢了 怎 。么办', '身份证丢了怎。么，\t办', '身份证丢了怎 么办']
-ok
-test_eda (tests.test_methods.TestMethods) ... /data/wanting/.local/lib/python3.8/site-packages/scipy/e n to be a power of 2.
-  warnings.warn("The balance properties of Sobol' points require"
 [Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - execute tasks: 
 [Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - random_insertion: 3 times
 [Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - synonym_replacement: 2 times
