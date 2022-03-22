@@ -2,91 +2,263 @@
 
 Polyhymnia (/pɒliˈhɪmniə/; Greek: Πολυύμνια, lit. 'the one of many hymns'), alternatively Polymnia (Πολύμνια) was in Greek mythology the Muse of sacred poetry, sacred hymn, dance, and eloquence as well as agriculture and pantomime.
 
+Polyhymnia name comes from the Greek words "poly" meaning "many" and "hymnos", which means "praise".
 
-## Getting started
+将praise理解为增强，那么该项目就是对“诗歌”的增强，即对自然语言数据的增广（我说是就是不接受反驳）。那么，该项目旨在给各位NLP工程师提供一些开箱即用的数据增广办法。
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Survey
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- [哈工大｜NLP数据增强方法？我有15种](https://mp.weixin.qq.com/s/YQ9jKtGVN9a7Uzi5zFE0pg)
 
-## Add your files
 
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/elpis-ailab/polyhymnia.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/project/integrations/)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://docs.gitlab.com/ee/user/clusters/agent/)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:ba78b625d15f79b8a17bbff9d243677f?https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+推荐使用本地安装模式。
+
+- 本地安装：
+
+```bash
+git clone https://github.com/luoy2/polyhymnia.git
+cd polyhymnia
+pip install .
+```
+测试安装：
+```bash
+~/polyhymnia$ python38 -m unittest tests/test_methods.py -v
+test_aeda (tests.test_methods.TestMethods) ... [jieba] default dict file path ../data/vocab.txt
+[jieba] default dict file path ../data/vocab.txt
+[jieba] load default dict ../data/vocab.txt ...
+/opt/python38/lib/python3.8/site-packages/pkg_resources/__init__.py:1151: DeprecationWarning: Use of  in a future release.
+  return get_provider(package_or_requirement).get_resource_stream(
+[jieba] load default dict ../data/vocab.txt ...
+>> Synonyms load wordseg dict [/data/wanting/.local/lib/python3.8/site-packages/synonyms/data/vocab.t
+>> Synonyms on loading stopwords [/data/wanting/.local/lib/python3.8/site-packages/synonyms/data/stop
+/data/wanting/.local/lib/python3.8/site-packages/synonyms/synonyms.py:104: ResourceWarning: unclosed synonyms/data/stopwords.txt' mode='r' encoding='utf-8'>
+  _load_stopwords(_fin_stopwords_path)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+[Synonyms] on loading vectors [/data/comm/pkgs/polyhymnia/polyhymnia/data/words.vector] ...
+/data/wanting/.local/lib/python3.8/site-packages/smart_open/smart_open_lib.py:479: DeprecationWarningopen/blob/develop/MIGRATING_FROM_OLDER_VERSIONS.rst for more information
+  warnings.warn(message, category=DeprecationWarning)
+/data/wanting/.local/lib/python3.8/site-packages/synonyms/word2vec.py:175: DeprecationWarning: The biputs. Use frombuffer instead
+  weights = fromstring(fin.read(binary_len), dtype=REAL)
+['身份证丢了怎 。么办', '身份证丢了 怎 。么办', '身份证丢了怎。么，\t办', '身份证丢了怎 么办']
+ok
+test_eda (tests.test_methods.TestMethods) ... /data/wanting/.local/lib/python3.8/site-packages/scipy/e n to be a power of 2.
+  warnings.warn("The balance properties of Sobol' points require"
+[Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - execute tasks: 
+[Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - random_insertion: 3 times
+[Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - synonym_replacement: 2 times
+[Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - random_deletion: 2 times
+[Polyhnmnia] 2021-10-21 11:11:38,266 - DEBUG - random_swap: 2 times
+[Polyhnmnia] 2021-10-21 11:11:38,302 - DEBUG - random_insertion --- 谷物小麦种植
+[Polyhnmnia] 2021-10-21 11:11:38,341 - DEBUG - synonym_replacement --- 玉米栽植
+[Polyhnmnia] 2021-10-21 11:11:38,341 - DEBUG - random_deletion --- 小麦种植
+[Polyhnmnia] 2021-10-21 11:11:38,341 - DEBUG - random_swap --- 种植小麦
+[Polyhnmnia] 2021-10-21 11:11:38,341 - DEBUG - random_swap --- 种植小麦
+[Polyhnmnia] 2021-10-21 11:11:38,341 - DEBUG - random_deletion --- 小麦种植
+[Polyhnmnia] 2021-10-21 11:11:38,342 - DEBUG - synonym_replacement --- 小麦甘蔗
+[Polyhnmnia] 2021-10-21 11:11:38,342 - DEBUG - random_insertion --- 棉花小麦种植
+[Polyhnmnia] 2021-10-21 11:11:38,342 - DEBUG - random_insertion --- 农作物小麦种植
+['种植小麦', '小麦种植', '谷物小麦种植', '小麦种植', '种植小麦', '农作物小麦种植', '小麦甘蔗', '棉花小
+ok
+test_reverse_translate (tests.test_methods.TestMethods) ... 请使用 ReverseTranslate.set_creds(appid, 
+ok
+test_simbert (tests.test_methods.TestMethods) ... 2021-10-21 11:11:38.407926: I tensorflow/stream_exebcudart.so.11.0
+['身份证丢了，怎么办',
+ '身份证丢了怎么办?',
+ '身份证丢了怎么办啊',
+ '身份证丢了怎么办？',
+ '身份证丢了怎么办！',
+ '身份证丢失怎么办？',
+ '身份证丢了该怎么办',
+ '身份证丢失，怎么办？']
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 11.913s
+```
+
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+- **simbert 数据生成** 
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+  使用simbert_v2 ([SimBERTv2来了！融合检索和生成的RoFormer-Sim模型](https://spaces.ac.cn/archives/8454)) 进行相似句生成。
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+  ```python
+  from polyhymnia import Simbert
+  Simbert.gen("身份证丢了怎么办", 8)
+  
+  Out[38]: 
+  ['身份证丢了怎么办?',
+   '身份证丢了怎么办？',
+   '身份证丢了怎么办。',
+   '身份证丢失了怎么办',
+   '身份证丢失了怎么办？',
+   '身份证丢了咋办？',
+   '身份证丢失怎么办？',
+   '身份证丢失怎么办！']
+  
+  ```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+  默认会使用GPU进行生成，如果想使用CPU，请自行在**引用包之前**设置CUDA_VISIBLE_DEVICES 环境变量:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+  ```python
+  import os
+  os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+  from polyhymnia import Simbert
+  ```
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+  
 
-## License
-For open source projects, say how it is licensed.
+- **reverse_translate 多链翻译**
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+  使用之前请先于https://api.fanyi.baidu.com/product/11 申请翻译`api appid`和`appsecret`
 
+  ```python
+  from polyhymnia import ReverseTranslate
+  
+  In [3]: ReverseTranslate.set_creds(appid, appSecret)
+  In [4]: ReverseTranslate.gen("小麦种植", 4)   
+  [Polyhnmnia] 2021-10-20 18:05:04,331 - DEBUG - start translate for: 小麦种植
+  [Polyhnmnia] 2021-10-20 18:05:05,744 - DEBUG - zh -> hu -> spa -> zh: 小麦栽培
+  [Polyhnmnia] 2021-10-20 18:05:07,481 - DEBUG - zh -> dan -> rom -> zh: 小麦种植；
+  [Polyhnmnia] 2021-10-20 18:05:08,424 - DEBUG - zh -> bul -> zh: 小麦作物
+  [Polyhnmnia] 2021-10-20 18:05:09,301 - DEBUG - zh -> en -> zh: 小麦种植
+  Out[4]: ['小麦种植', '小麦作物', '小麦种植；', '小麦栽培']
+  
+  ```
+  
+- [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
+
+  在此进行了一些改进，使用sobol随机序列生成随机任务顺序，保证任务随机性
+
+  ```python
+  In [1]: from polyhymnia import EDA    
+  
+  In [2]: EDA.gen("小麦种植", 8)                
+  
+  [Polyhnmnia] 2021-10-20 18:10:24,632 - DEBUG - execute tasks: 
+  [Polyhnmnia] 2021-10-20 18:10:24,632 - DEBUG - random_insertion: 3 times
+  [Polyhnmnia] 2021-10-20 18:10:24,632 - DEBUG - synonym_replacement: 2 times
+  [Polyhnmnia] 2021-10-20 18:10:24,632 - DEBUG - random_deletion: 2 times
+  [Polyhnmnia] 2021-10-20 18:10:24,632 - DEBUG - random_swap: 2 times
+  [Polyhnmnia] 2021-10-20 18:10:24,673 - DEBUG - random_insertion --- 玉米小麦种植
+  [Polyhnmnia] 2021-10-20 18:10:24,717 - DEBUG - synonym_replacement --- 甜菜作物
+  [Polyhnmnia] 2021-10-20 18:10:24,718 - DEBUG - random_deletion --- 小麦种植
+  [Polyhnmnia] 2021-10-20 18:10:24,718 - DEBUG - random_swap --- 种植小麦
+  [Polyhnmnia] 2021-10-20 18:10:24,718 - DEBUG - random_swap --- 种植小麦
+  [Polyhnmnia] 2021-10-20 18:10:24,718 - DEBUG - random_deletion --- 小麦种植
+  [Polyhnmnia] 2021-10-20 18:10:24,718 - DEBUG - synonym_replacement --- 大豆栽植
+  [Polyhnmnia] 2021-10-20 18:10:24,718 - DEBUG - random_insertion --- 马铃薯小麦种植
+  [Polyhnmnia] 2021-10-20 18:10:24,718 - DEBUG - random_insertion --- 种植小麦种植
+          
+  Out[2]: ['种植小麦', '小麦种植', '种植小麦种植', '玉米小麦种植', '小麦种植', '种植小麦', '甜
+  菜作物', '大豆栽植', '马铃薯小麦种植']
+  
+  ```
+
+  高级api `polyhymnia.methods.noising.stacking.eda.gen`
+
+  - `alpha_sr` 同义词替换概率, 默认为0.1
+
+  - `alpha_ri` 随机插入概率, 默认为0.1
+
+  - `alpha_rs` 随机替换词顺序概率，默认为0.1
+
+  - `p_rd` 随机删除概率，默认为0.1
+
+  使用者可以使用高级api进行任务组合，如：
+
+  ```python
+  from polyhymnia.methods.noising.stacking.eda import gen
+  contents = '小麦种植'
+  print(gen(contents, num_aug=8, p_rd=0, alpha_ri=0))
+  ```
+
+  ```
+  [Polyhnmnia] 2021-10-20 18:15:03,438 - DEBUG - execute tasks: 
+  [Polyhnmnia] 2021-10-20 18:15:03,438 - DEBUG - synonym_replacement: 4 times
+  [Polyhnmnia] 2021-10-20 18:15:03,438 - DEBUG - random_swap: 4 times
+  [Polyhnmnia] 2021-10-20 18:15:03,438 - DEBUG - synonym_replacement --- 小麦耕种
+  [Polyhnmnia] 2021-10-20 18:15:03,438 - DEBUG - synonym_replacement --- 小麦栽植
+  [Polyhnmnia] 2021-10-20 18:15:03,438 - DEBUG - random_swap --- 种植小麦
+  [Polyhnmnia] 2021-10-20 18:15:03,439 - DEBUG - random_swap --- 种植小麦
+  [Polyhnmnia] 2021-10-20 18:15:03,439 - DEBUG - synonym_replacement --- 小麦种植
+  [Polyhnmnia] 2021-10-20 18:15:03,439 - DEBUG - synonym_replacement --- 谷物种植
+  [Polyhnmnia] 2021-10-20 18:15:03,439 - DEBUG - random_swap --- 种植小麦
+  [Polyhnmnia] 2021-10-20 18:15:03,439 - DEBUG - random_swap --- 种植小麦
+  
+  Out[6]: ['种植小麦', '小麦耕种', '种植小麦', '小麦栽植', '谷物种植', '小麦种植', '种植小麦', '种植小
+  麦']
+  ```
+
+  可以发现的是，当设置某些概率为0时，基于**sobol序列**的特性，EDA会均匀分配概率非0的任务进行数据增强组合。
+
+  Ref:
+  - [Sobol序列](https://en.wikipedia.org/wiki/Sobol_sequence)
+  - [低差异序列](https://zhuanlan.zhihu.com/p/20197323)
+  
+
+- [AEDA: An Easier Data Augmentation Technique for Text Classification](https://arxiv.org/abs/2108.13230)
+
+  ```python
+  In [6]: from polyhymnia import AEDA   
+  In [7]: AEDA.gen("身份证丢了怎么办", 4)       
+  Out[7]: ['身份证丢了怎么,办', '身份证丢了怎么办。', '身 份证丢了怎么办', '身份证丢了怎么办']
+  ```
+
+    高级api `polyhymnia.methods.noising.insertion.aeda_text`
+
+    - `fraction` 插入标点符号数量比例，默认为1/3
+    
+    - `puncs` 插入标点符号列表，默认为`[",", "。", "，", "\t", " "]`
+  
+    
+  
+
+
+
+## Logging
+
+- 使用`polyhymnia._logger.LoggingFactory`进行模块日志配置, 使用`polyhymnia.set_verbose`来进行快速切换日志等级。
+
+  ```python
+  In [1]: import polyhymnia                               
+  In [2]: polyhymnia.ReverseTranslate.set_creds(appid, appsecret)              
+  In [3]: polyhymnia.ReverseTranslate.gen("你是狗吗", 3)                                             
+  Out[3]: ['你是狗吗？', '你是一只狗。']
+  # 此时没有日志信息
+      
+  In [4]: import polyhymnia                                 
+  In [5]: polyhymnia.set_verbose(True)                                               
+  In [6]: ReverseTranslate.gen("你是狗吗", 3)                                                  
+  [Polyhnmnia] 2021-10-21 08:21:05,464 - DEBUG - start translate for: 你是狗吗
+  [Polyhnmnia] 2021-10-21 08:21:06,668 - DEBUG - zh -> el -> en -> zh: 你是一只狗。
+  [Polyhnmnia] 2021-10-21 08:21:08,065 - DEBUG - zh -> cs -> ara -> zh: 你是狗吗？
+  [Polyhnmnia] 2021-10-21 08:21:09,438 - DEBUG - zh -> est -> pt -> zh: 你是狗吗？
+  [Polyhnmnia] 2021-10-21 08:21:10,775 - DEBUG - zh -> bul -> ru -> zh: 你是狗吗？
+  [Polyhnmnia] 2021-10-21 08:21:11,693 - DEBUG - zh -> en -> zh: 你是狗吗
+  Out[6]: ['你是狗吗', '你是狗吗？', '你是一只狗。']
+  ```
+  
+
+
+
+
+
+## 鸣谢
+
+- [bert4keras](https://github.com/bojone/bert4keras)
+- [RoFormer-Sim: Integrating Retrieval and Generation into RoFormer](https://github.com/ZhuiyiTechnology/roformer-sim)
+- [chatopera/Synonyms: 中文近义词：聊天机器人，智能问答工具包](https://github.com/chatopera/Synonyms)
+
+- [fxsjy/jieba: 结巴中文分词](https://github.com/fxsjy/jieba)
+- [tsroten/zhon: Constants used in Chinese text processing](https://github.com/tsroten/zhon)
+- [easy to use retry decorator in python - GitHub](https://github.com/invl/retry)
+- [SciPy library main repository - GitHub](https://github.com/scipy/scipy)
+- [tensorflow/tensorflow: An Open Source Machine ... - GitHub](https://github.com/tensorflow/tensorflow)
+- [psf/requests: A simple, yet elegant, HTTP library. - GitHub](https://github.com/psf/requests)
+- [GitHub - zhanlaoban/EDA_NLP_for_Chinese](https://github.com/zhanlaoban/EDA_NLP_for_Chinese)
+- [通用翻译API - 百度翻译开放平台](https://api.fanyi.baidu.com/product/11)
